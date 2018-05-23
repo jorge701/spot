@@ -86,13 +86,36 @@ public class EntityBase : MonoBehaviour {
         {
             m_health_current += m_shield_current;
             m_shield_current = 0;
-        }
-        if (m_health_current < 0)
-        {
-            DestroyEntity();
-        }
+		}
+		if (m_health_current < 0 && m_entity_name == "Player") {
+		//if (m_entity_name == "Player")
+			/*DestroyEntity();
+			SceneManager.LoadScene (6);*/
+
+		}
+		if (m_health_current < 0 && m_entity_name == "BOSS") {
+			//if (m_entity_name == "Test Boss")
+				DestroyEntity ();
+			SceneManager.LoadScene (5);
+			
+		}if (m_health_current < 0 && m_entity_name == "Test Boss") {
+			//if (m_entity_name == "Player")
+			DestroyEntity();
+
+
+		}
+       
     }
     #region Co-Routines
+		IEnumerator retraso(){
+			yield return new WaitForSeconds (2);
+			SceneManager.LoadScene (5);
+		}
+
+	IEnumerator retraso2(){
+			yield return new WaitForSeconds(2);
+			SceneManager.LoadScene (6);
+		}
     IEnumerator DpsMeter()
     {
         float lastRegistredHealth = m_health_current;
