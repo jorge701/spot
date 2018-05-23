@@ -5998,8 +5998,8 @@ MonoBehaviour:
   m_referencesToThisEntityInUse: 0
   m_entity_name: Test Boss
   m_entity_effectivenessScaling: 1
-  m_health_current: 10000
-  m_health_max: 10000
+  m_health_current: 1500
+  m_health_max: 1500
   m_shield_current: 0
   m_shield_max: 0
   m_bonusDamageMultiplier: 0

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EntityBase : MonoBehaviour {
+public class EntityBaseEnemy : MonoBehaviour {
 
 	public bool m_isEnemy;
 
@@ -38,7 +38,7 @@ public class EntityBase : MonoBehaviour {
     public static Color ENEMY_COLOR_TINT = new Color32(255, 37, 0, 255);
     public static Color ALLY_COLOR_TINT = new Color32(0, 170, 255, 255);
 
-    public enum BuffType
+    public enum BuffTypeEnemy
     {
         directDamage,
         criticalDamage,
@@ -51,10 +51,10 @@ public class EntityBase : MonoBehaviour {
 
     private float tempCRStartDuration;
     private float tempCRStartStrenght;
-    private BuffType tempCRStartType;
+    private BuffTypeEnemy tempCRStartType;
 
     void Start () {
-		if (m_isEnemy)
+		/*if (m_isEnemy)
 			StageManager.currentInstance.RegisterEnemy (this);
 		else
 			StageManager.currentInstance.RegisterAlly (this);
@@ -178,7 +178,7 @@ public class EntityBase : MonoBehaviour {
             return;
         SubstractHealthBasedOnDamageType(edmg, WeaponData.DamageType.explosive);
     }
-    public void AddBuff(BuffType _buffType, float _buffDuration, float _buffStrenght)
+    public void AddBuff(BuffTypeEnemy _buffType, float _buffDuration, float _buffStrenght)
     {
         tempCRStartDuration = _buffDuration;
         tempCRStartStrenght = _buffStrenght;
@@ -204,11 +204,11 @@ public class EntityBase : MonoBehaviour {
         m_health_current = 0;
         if (m_isEnemy)
         {
-            StageManager.currentInstance.RemoveEnemy(this);
+            StageManager1.currentInstance.RemoveEnemy(this);
         }
         else
         {
-            StageManager.currentInstance.RemoveAlly(this);
+            StageManager1.currentInstance.RemoveAlly(this);
         }
         StopAllCoroutines();
         RemoveAllBuffs();
@@ -224,32 +224,32 @@ public class EntityBase : MonoBehaviour {
     {
         return m_shield_current / m_shield_max;
     }
-    public float GetBuffMultiplier(BuffType buff)
+    public float GetBuffMultiplier(BuffTypeEnemy buff)
     {
-        return buff == BuffType.criticalChance ? buffStrenght[(int)buff] : 1 + buffStrenght[(int)buff] / 100f;
+		return buff == BuffTypeEnemy.criticalChance ? buffStrenght[(int)buff] : 1 + buffStrenght[(int)buff] / 100f;
     }
     public float GetBuffMultiplier(int index)
     {
-        return index == (int)BuffType.criticalChance? buffStrenght[index] : 1 + buffStrenght[index] / 100f;
+		return index == (int)BuffTypeEnemy.criticalChance? buffStrenght[index] : 1 + buffStrenght[index] / 100f;
     }
 
-    public float GetBuffStrenght(BuffType buff) { return buffStrenght[(int)buff]; }
+	public float GetBuffStrenght(BuffTypeEnemy buff) { return buffStrenght[(int)buff]; }
     public float GetBuffStrenght(int index) { return buffStrenght[index]; }
 
-    public int GetBuffStacks(BuffType buff) { return buffStacks[(int)buff]; }
+	public int GetBuffStacks(BuffTypeEnemy buff) { return buffStacks[(int)buff]; }
     public int GetBuffStacks(int index) { return buffStacks[index]; }
 
     public float GetDamageMultiplier()
     {
-        return (m_bonusDamageMultiplier + GetBuffMultiplier(BuffType.directDamage)) * m_entity_effectivenessScaling;
+		return (m_bonusDamageMultiplier + GetBuffMultiplier(BuffTypeEnemy.directDamage)) * m_entity_effectivenessScaling;
     }
     public float GetCriticalChance()
     {
-        return m_bonusCritChance + GetBuffMultiplier(BuffType.criticalChance);
+		return m_bonusCritChance + GetBuffMultiplier(BuffTypeEnemy.criticalChance);
     }
     public float GetCriticialDamageMultiplier()
     {
-        return m_bonusCritDamageMultiplier + GetBuffMultiplier(BuffType.criticalDamage) -1;
+		return m_bonusCritDamageMultiplier + GetBuffMultiplier(BuffTypeEnemy.criticalDamage) -1;
     }
     #endregion
 }
