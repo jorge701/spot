@@ -89,8 +89,8 @@ public class EntityBase : MonoBehaviour {
 		}
 		if (m_health_current < 0 && m_entity_name == "Player") {
 		//if (m_entity_name == "Player")
-			/*DestroyEntity();
-			SceneManager.LoadScene (6);*/
+			DestroyEntity();
+			SceneManager.LoadScene (6);
 
 		}
 		if (m_health_current < 0 && m_entity_name == "BOSS") {

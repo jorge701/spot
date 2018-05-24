@@ -207,7 +207,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -304,7 +304,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 0d37063e91f64c44aa67f01f3a32b386, type: 3}
-    m_FontSize: 90
+    m_FontSize: 60
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -315,7 +315,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '>AEON'
+  m_Text: Unknown manufacturer
 --- !u!222 &209575874
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -399,6 +399,10 @@ Prefab:
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: 9fa5e3c9b13ceb446b5ee61c2998dd49, type: 2}
+    - target: {fileID: 100004, guid: 487b002b3cd366240bf1b3d9f2ba2680, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 487b002b3cd366240bf1b3d9f2ba2680, type: 3}
   m_IsPrefabParent: 0
@@ -597,10 +601,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: The starlight is equiped with a massive hyperpulse cannon as a special weapon.
-    this ship is capable of dealing colossals amount of damage with it, but it takes
-    a long time to recharge. This prototype ship has never been tested in real combat
-    since its weapons were considered too dangeorus to use.
+  m_Text: The ship is 20 meters long and is designed specifically for combat. While
+    its mass is significantly less than most popular fighters, this is because most
+    of the interior space is occupied by engines and weapon systems.
 --- !u!222 &669439436
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -877,7 +880,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100004, guid: 638be52d21fa5e644b35ab8c86e72609, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 638be52d21fa5e644b35ab8c86e72609, type: 3}
@@ -1566,7 +1569,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Starlight - Fighter class
+  m_Text: Sulha - Light Figther Class
 --- !u!222 &2036445624
 CanvasRenderer:
   m_ObjectHideFlags: 0

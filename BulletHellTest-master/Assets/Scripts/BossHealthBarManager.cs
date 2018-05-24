@@ -21,7 +21,7 @@ public class BossHealthBarManager : MonoBehaviour {
 	private float m_percentDelay = 0;							// Relleno de la sombra de la barra
 	private float m_healthNumTemp = 0;							// Numero mostrado
 	private Vector3 initialOffset;								// Posicion inicial en el interfaz
-	private bool fadeRutineActive = false;						// Co-rutina de fade activa?
+	//private bool fadeRutineActive = false;						// Co-rutina de fade activa?
 
 	private float delaySpeedMultiplier = 1;
 	private float numberSpeedMultiplier = 1;

@@ -20,4 +20,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Credits.unity
     guid: e0d2bb432407e6e4780a3baf7f5194bc
+  - enabled: 1
+    path: Assets/Scenes/VictoryMenu.unity
+    guid: 0a5baa3cee4718d48a0e1c72dcf9a585
+  - enabled: 1
+    path: Assets/Scenes/LostMenu.unity
+    guid: 67b7e529c1ca0944bb9a692feb5c3194
+  - enabled: 1
+    path: Assets/Scenes/Hangar 1.unity
+    guid: 855d14ea5ee85e44791662e20c5c4192
   m_configObjects: {}
